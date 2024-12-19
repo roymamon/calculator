@@ -1,4 +1,3 @@
-//dark mode
 const darkModeToggle = document.getElementById("dark-mode-toggle");
 
 if (localStorage.getItem("dark-mode") === "enabled") {
@@ -16,7 +15,7 @@ darkModeToggle.addEventListener("click", () => {
 
 const display = document.querySelector(".display");
 let currentInput = ""; 
-let previousInput = "";
+let previousInput = ""; 
 let operator = ""; 
 
 function handleDigit(digit) {
@@ -26,21 +25,27 @@ function handleDigit(digit) {
 }
 
 function handleOperator(op) {
-    if (currentInput === "") return; 
+    if (currentInput === "") return;
+
     if (previousInput !== "") {
-        currentInput = String(operate(operator, parseFloat(previousInput), parseFloat(currentInput)));
+        const result = operate(operator, parseFloat(previousInput), parseFloat(currentInput));
+        updateDisplay(result);
+        previousInput = String(result); 
+    } else {
+        previousInput = currentInput; 
     }
-    operator = op;
-    previousInput = currentInput;
-    currentInput = "";
+
+    operator = op; 
+    currentInput = ""; 
 }
 
 function calculateResult() {
     if (currentInput === "" || previousInput === "" || operator === "") return;
-    currentInput = String(operate(operator, parseFloat(previousInput), parseFloat(currentInput)));
-    operator = "";
-    previousInput = "";
-    updateDisplay(currentInput);
+    const result = operate(operator, parseFloat(previousInput), parseFloat(currentInput));
+    updateDisplay(result);
+    operator = ""; 
+    previousInput = ""; 
+    currentInput = String(result); 
 }
 
 function clearCalculator() {
@@ -65,13 +70,11 @@ document.querySelectorAll(".operator").forEach((button) =>
 document.querySelector(".equals").addEventListener("click", calculateResult);
 document.querySelector(".clear").addEventListener("click", clearCalculator);
 
-//functions
 const add = (a, b) => a + b;
 const subtract = (a, b) => a - b;
 const multiply = (a, b) => a * b;
-const divide = (a, b) => (b === 0 ? "Can't Divide By Zero" : a / b);
+const divide = (a, b) => (b === 0 ? "Error" : a / b);
 
-//calculator operation
 const operate = (operation, a, b) => {
     switch (operation) {
         case "+":
