@@ -70,6 +70,20 @@ document.querySelectorAll(".operator").forEach((button) =>
 document.querySelector(".equals").addEventListener("click", calculateResult);
 document.querySelector(".clear").addEventListener("click", clearCalculator);
 
+document.querySelectorAll("button").forEach((button) => {
+    button.addEventListener("mousedown", () => {
+        button.classList.add("active"); // Add the "active" class on click
+    });
+
+    button.addEventListener("mouseup", () => {
+        button.classList.remove("active"); // Remove the "active" class when the click is released
+    });
+
+    button.addEventListener("mouseleave", () => {
+        button.classList.remove("active"); // Remove the class if the mouse leaves the button
+    });
+});
+
 const add = (a, b) => a + b;
 const subtract = (a, b) => a - b;
 const multiply = (a, b) => a * b;

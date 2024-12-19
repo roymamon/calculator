@@ -69,6 +69,18 @@ body.dark-mode button {
 button:hover {
     background: #ddd;
 }
+/* Light Mode Button Active State */
+button.active {
+    transition: transform 0.2s ease, background-color 0.2s ease; /* Smooth transitions */
+    background-color: #ffeb3b; /* Bright yellow color for the active state in light mode */
+    color: black; /* Ensures good contrast */
+}
+
+/* Dark Mode Button Active State */
+body.dark-mode button.active {
+    background-color: #ff9800; /* Bright orange color for the active state in dark mode */
+    color: white; /* Ensures good contrast in dark mode */
+}
 
 .operator {
     background: #f9d71c;
