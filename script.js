@@ -1,3 +1,8 @@
+//dark mode
+const darkModeToggle = document.getElementById("dark-mode-toggle");
+darkModeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+});
 //functions
 const add = (a, b) => a + b;
 const subtract = (a, b) => a - b;
@@ -8,7 +13,7 @@ const divide = (a, b) => {
     }
     return a / b;
 };
-
+//calculator operation
 const operate = (operation, a, b) => {
     switch (operation) {
         case "add":
