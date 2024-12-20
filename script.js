@@ -19,7 +19,7 @@ let previousInput = "";
 let operator = ""; 
 
 function handleDigit(digit) {
-    if (digit === "." && currentInput.includes(".")) return; // Avoid multiple decimals
+    if (digit === "." && currentInput.includes(".")) return; 
     currentInput += digit;
     updateDisplay(currentInput);
 }
@@ -72,22 +72,22 @@ document.querySelector(".clear").addEventListener("click", clearCalculator);
 
 document.querySelectorAll("button").forEach((button) => {
     button.addEventListener("mousedown", () => {
-        button.classList.add("active"); // Add the "active" class on click
+        button.classList.add("active"); 
     });
 
     button.addEventListener("mouseup", () => {
-        button.classList.remove("active"); // Remove the "active" class when the click is released
+        button.classList.remove("active"); 
     });
 
     button.addEventListener("mouseleave", () => {
-        button.classList.remove("active"); // Remove the class if the mouse leaves the button
+        button.classList.remove("active"); 
     });
 });
 
 const add = (a, b) => a + b;
 const subtract = (a, b) => a - b;
 const multiply = (a, b) => a * b;
-const divide = (a, b) => (b === 0 ? "Error" : a / b);
+const divide = (a, b) => (b === 0 ? "Can't Divide By Zero" : a / b);
 
 const operate = (operation, a, b) => {
     switch (operation) {

@@ -21,7 +21,7 @@ body.dark-mode {
     border-radius: 10px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    transition: background-color 0.3s ease; /* Smooth transition */
+    transition: background-color 0.3s ease; 
 }
 
 body.dark-mode .calculator {
@@ -69,17 +69,15 @@ body.dark-mode button {
 button:hover {
     background: #ddd;
 }
-/* Light Mode Button Active State */
 button.active {
-    transition: transform 0.2s ease, background-color 0.2s ease; /* Smooth transitions */
-    background-color: #ffeb3b; /* Bright yellow color for the active state in light mode */
-    color: black; /* Ensures good contrast */
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    background-color: #ffeb3b; 
+    color: black;
 }
 
-/* Dark Mode Button Active State */
 body.dark-mode button.active {
-    background-color: #ff9800; /* Bright orange color for the active state in dark mode */
-    color: white; /* Ensures good contrast in dark mode */
+    background-color: #ff9800; 
+    color: white; 
 }
 
 .operator {
