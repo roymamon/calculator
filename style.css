@@ -124,7 +124,7 @@ body.dark-mode .clear {
     position: absolute;
     top: 10px;
     right: 10px;
-    background: black;
+    background: rgb(103, 103, 103);
     border: none;
     font-size: 1.2em;
     cursor: pointer;
@@ -132,4 +132,11 @@ body.dark-mode .clear {
     height: max-content;
     padding: 15px;
     border-radius: 20%;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+
 }
+body.dark-mode #dark-mode-toggle {
+    background: rgb(154, 154, 154); /* White background for dark mode */
+    color: black; /* Text color for contrast */
+}
+ 
